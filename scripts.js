@@ -9,8 +9,10 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+canvas.id = "theZone";
+
 //add the canvas to the html body
-document.body.appendChild(canvas);
+document.getElementById('theCanvas').appendChild(canvas);
 
 app.url = 'apius.faceplusplus.com ';
 app.key = 'b76b9735bd2795ac44068c6b4d01d96e';
