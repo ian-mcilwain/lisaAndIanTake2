@@ -54,7 +54,20 @@ app.server = 'http://api.us.faceplusplus.com/';
 app.key = 'b76b9735bd2795ac44068c6b4d01d96e';
 app.secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
 
-
+// Initialize API Object.
+var api = new FacePP('0ef14fa726ce34d820c5a44e57fef470',
+                     '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD',
+                     { apiURL: 'http://apicn.faceplusplus.com/v2' });
+// Call the Detection request.
+api.request('detection/detect', {
+  url: 'http://cn.faceplusplus.com/static/resources/python_demo/1.jpg'
+}, function(err, result) {
+  if (err) {
+    $('#response').text('Load failed.');
+    return;
+  }
+  $('#response').text(JSON.stringify(result));
+});
 
 // DOCUMENT READY
 $(function() {
