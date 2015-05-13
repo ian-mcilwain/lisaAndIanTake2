@@ -60,13 +60,18 @@ var api = new FacePP('0ef14fa726ce34d820c5a44e57fef470',
                      { apiURL: 'http://apicn.faceplusplus.com/v2' });
 // Call the Detection request.
 api.request('detection/detect', {
-  url: 'http://cn.faceplusplus.com/static/resources/python_demo/1.jpg'
+  url: 'http://apius.faceplusplus.com/v2/detection/detect?api_key=' + app.key +'&api_secret=' + app.secret
 }, function(err, result) {
   if (err) {
     $('#response').text('Load failed.');
     return;
   }
+
+  //append the response to the DOM
   $('#response').text(JSON.stringify(result));
+
+  console.log(result);
+
 });
 
 // DOCUMENT READY
