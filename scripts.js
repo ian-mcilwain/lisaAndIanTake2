@@ -7,7 +7,7 @@ var ctx = canvas.getContext('2d');
 
 // set canvas width and height to be that of the window
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;x
+canvas.height = window.innerHeight;
 
 // grab the video element with jQuery
 app.video = $('video.webcam')[0];
@@ -58,5 +58,6 @@ app.secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
 
 // DOCUMENT READY
 $(function() {
+	// app.init();
   app.getVideo();
 })
