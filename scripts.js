@@ -73,11 +73,7 @@ app.detectFace = function(){
 	}); // end ajax
 }
 
-<<<<<<< HEAD
 
-
-
-=======
 app.detectSmile = function(){
 	console.log(smileData)
 
@@ -85,7 +81,7 @@ app.detectSmile = function(){
 		console.log("you're happy!")
 	}
 }
->>>>>>> 81a4586132e167db8bbf31f885f1a48b1d36c60c
+
 
 // DOCUMENT READY
 $(function() {
