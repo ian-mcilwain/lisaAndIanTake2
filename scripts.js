@@ -1,23 +1,15 @@
 // define namespace
 app = {};
 
-//mke the canvas and the 2d context
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-
-// set canvas width and height to be that of the window
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
 // grab the video element with jQuery
-app.video = $('video.webcam')[0];
+app.video = $('.webcam')[0];
 // grab the canvas with jquery
-app.canvas = $('canvas.photo')[0];
+app.canvas = $('.photo')[0];
 
 app.getVideo = function() {
 
-  // normalize so it works on all browsers in the future all browsers will get navigator.getUserMedia()
-  navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+// normalize so it works on all browsers in the future all browsers will get navigator.getUserMedia()
+navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
   navigator.getUserMedia ({ video: true,  audio: true }, function(localMediaStream) {
     // set the video source
@@ -43,9 +35,19 @@ app.takePhoto = function() {
   
   // Then we convert that canvas to a "data blob"  which is like an image src
   var data = app.canvas.toDataURL('image/png');
+
+  console.log(data);
   
   // 1. create an image 2. set the source the be the data 3. append to an element
-  $('<img>').attr('src',data).appendTo('.strip');
+  var img = $('<img>').attr('src',data);
+  var link = $("<a>").attr("download","so-good-looking").attr("href",data);
+
+  console.log(img);
+  console.log(link);
+
+
+  img.appendTo(link);
+  link.appendTo('.strip');
 }
 
 
@@ -58,7 +60,7 @@ app.url = app.server + 'detection/detect' + app.secret;
 
 app.detectFace = function(){
 	$.ajax({
-		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://upload.wikimedia.org/wikipedia/commons/7/72/Xi_Jinping_October_2013_(cropped).jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=smiling',
+		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://fabulousbuzz.com/wp-content/uploads/2011/09/michelle-obama-tennis-us-open-05_prphotos.jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=smiling',
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
@@ -68,9 +70,57 @@ app.detectFace = function(){
 	}); // end ajax
 }
 
+
+
+
+
 // DOCUMENT READY
 $(function() {
 	// app.init();
   app.getVideo();
   app.detectFace();
+
+    $('a.snap').on('click',function(e) {
+      e.preventDefault();
+      // find the wait time
+      var waitTime = $(this).data('wait');
+      var waitedTime = 0;
+
+      // if there is no wait, then just take it
+      if(!waitTime) {
+        app.takePhoto();
+        app.playCameraSounds();
+        return; // stop the rest from running          
+      }
+
+      // set a timeout to take the photo after X seconds
+      setTimeout(function(){
+        app.takePhoto();
+        app.playCameraSounds();
+      },waitTime);
+
+      $('.countdown').text(waitTime / 1000).show();
+
+      var interval = setInterval(function(){
+        waitedTime+= 1000;
+        var timeLeft = (waitTime - waitedTime) / 1000;
+        $('.countdown').text(timeLeft);
+        if(waitedTime >= waitTime) {
+          clearInterval(interval);
+          $('.countdown').hide();
+        }
+      },1000);
+
+
+    });
+
+    $('a.flip').on('click',function(e) {
+      e.preventDefault();
+      $(app.video).toggleClass('flipped');
+    });
+
+
+
+
+
 })
