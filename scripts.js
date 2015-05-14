@@ -50,17 +50,22 @@ app.takePhoto = function() {
 
 
 
-app.server = 'http://api.us.faceplusplus.com/';
+app.server = 'http://api.us.faceplusplus.com/v2';
 app.key = 'b76b9735bd2795ac44068c6b4d01d96e';
 app.secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
 
+app.url = app.server + 'detection/detect' + app.secret;
+
+//http://apius.faceplusplus.com/v2/detection/detect?api_key=DEMO_KEY&api_secret=DEMO_SECRET
+
 // Initialize API Object.
-var api = new FacePP('0ef14fa726ce34d820c5a44e57fef470',
-                     '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD',
-                     { apiURL: 'http://apicn.faceplusplus.com/v2' });
+var api = new FacePP('b76b9735bd2795ac44068c6b4d01d96e',
+                     'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw',
+                     { apiURL: 'http://apius.faceplusplus.com /v2/detection/detect?api_key=b76b9735bd2795ac44068c6b4d01d96e&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw' });
+
 // Call the Detection request.
 api.request('detection/detect', {
-  url: 'http://apius.faceplusplus.com/v2/detection/detect?api_key=' + app.key +'&api_secret=' + app.secret
+  url: 'http://cn.faceplusplus.com/static/resources/python_demo/1.jpg'
 }, function(err, result) {
   if (err) {
     $('#response').text('Load failed.');
@@ -72,7 +77,7 @@ api.request('detection/detect', {
 
   console.log(result);
 
-});
+}); // end api.request
 
 // DOCUMENT READY
 $(function() {
