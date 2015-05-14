@@ -54,28 +54,20 @@ app.server = 'http://api.us.faceplusplus.com/';
 app.key = 'b76b9735bd2795ac44068c6b4d01d96e';
 app.secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
 
-// Initialize API Object.
-var api = new FacePP('0ef14fa726ce34d820c5a44e57fef470',
-                     '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD',
-                     { apiURL: 'http://apicn.faceplusplus.com/v2' });
-// Call the Detection request.
-api.request('detection/detect', {
-  url: 'http://apius.faceplusplus.com/v2/detection/detect?api_key=' + app.key +'&api_secret=' + app.secret
-}, function(err, result) {
-  if (err) {
-    $('#response').text('Load failed.');
-    return;
-  }
-
-  //append the response to the DOM
-  $('#response').text(JSON.stringify(result));
-
-  console.log(result);
-
-});
-
+app.detectFace = function(){
+	$.ajax({
+		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://www.ianmcilwain.com/wp-content/themes/theme-hackeryou/images/headshot.jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=glass,pose,gender,age,race,smiling',
+		type : "GET",
+		dataType : 'json',
+		success : function(data) {
+			console.log(data);
+			// weatherApp.isThereWeather(data);
+		}
+	}); // end ajax
+}
 // DOCUMENT READY
 $(function() {
 	// app.init();
   app.getVideo();
+  app.detectFace();
 })
