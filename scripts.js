@@ -56,29 +56,6 @@ app.secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
 
 app.url = app.server + 'detection/detect' + app.secret;
 
-//http://apius.faceplusplus.com/v2/detection/detect?api_key=DEMO_KEY&api_secret=DEMO_SECRET
-
-// Initialize API Object.
-var api = new FacePP('b76b9735bd2795ac44068c6b4d01d96e',
-                     'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw',
-                     { apiURL: 'http://apius.faceplusplus.com /v2/detection/detect?api_key=b76b9735bd2795ac44068c6b4d01d96e&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw' });
-
-// Call the Detection request.
-api.request('detection/detect', {
-  url: 'http://cn.faceplusplus.com/static/resources/python_demo/1.jpg'
-}, function(err, result) {
-  if (err) {
-    $('#response').text('Load failed.');
-    return;
-  }
-
-  //append the response to the DOM
-  $('#response').text(JSON.stringify(result));
-
-  console.log(result);
-
-}); // end api.request
-
 app.detectFace = function(){
 	$.ajax({
 		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://www.ianmcilwain.com/wp-content/themes/theme-hackeryou/images/headshot.jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=glass,pose,gender,age,race,smiling',
