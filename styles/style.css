@@ -131,13 +131,72 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+img, canvas {
+  max-width: 100%; }
+
 body {
   background: #fffffb; }
 
 .wrapper {
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid red; }
 
 h1 {
-  font-family: monospace;
-  color: red; }
+  font-family: 'Quicksand', sans-serif;
+  color: red;
+  text-transform: uppercase; }
+
+.left {
+  float: left;
+  width: 50%; }
+
+.right {
+  float: left;
+  width: 50%; }
+
+video {
+  transition: all 0.5s; }
+  video .flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+
+a {
+  text-decoration: none; }
+
+.tools {
+  padding: 10px; }
+  .tools a {
+    color: #fffffb;
+    background: red;
+    display: inline-block;
+    width: 70px;
+    line-height: 70px;
+    font-size: 20px;
+    border-radius: 50%; }
+
+.photoBooth {
+  border-radius: 10px;
+  border-radius: 5px;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 500px;
+  -webkit-perspective: 500px; }
+
+canvas {
+  display: none; }
+
+.strip img {
+  width: 16.666666667%;
+  float: left; }
+
+.countdown {
+  position: absolute;
+  width: 100%;
+  font-size: 200px;
+  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
+  top: 0;
+  padding-top: 190px;
+  display: none; }

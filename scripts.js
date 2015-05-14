@@ -98,14 +98,12 @@ $(function() {
       // if there is no wait, then just take it
       if(!waitTime) {
         app.takePhoto();
-        app.playCameraSounds();
         return; // stop the rest from running          
       }
 
       // set a timeout to take the photo after X seconds
       setTimeout(function(){
         app.takePhoto();
-        app.playCameraSounds();
       },waitTime);
 
       $('.countdown').text(waitTime / 1000).show();
