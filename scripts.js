@@ -64,15 +64,28 @@ app.detectFace = function(){
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
-			console.log(data);
-			// weatherApp.isThereWeather(data);
+			// console.log(data);
+			// console.log(data.face[0].attribute.smiling.value)
+			smileData = data.face[0].attribute.smiling.value;
+			// console.log(smileData);
+			app.detectSmile(smileData);
 		}
 	}); // end ajax
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+app.detectSmile = function(){
+	console.log(smileData)
+
+	if (smileData >= 30) {
+		console.log("you're happy!")
+	}
+}
+>>>>>>> 81a4586132e167db8bbf31f885f1a48b1d36c60c
 
 // DOCUMENT READY
 $(function() {
