@@ -58,7 +58,7 @@ app.url = app.server + 'detection/detect' + app.secret;
 
 app.detectFace = function(){
 	$.ajax({
-		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://www.ianmcilwain.com/wp-content/themes/theme-hackeryou/images/headshot.jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=glass,pose,gender,age,race,smiling',
+		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://upload.wikimedia.org/wikipedia/commons/7/72/Xi_Jinping_October_2013_(cropped).jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=smiling',
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
