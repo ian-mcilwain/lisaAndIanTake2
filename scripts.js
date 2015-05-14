@@ -62,10 +62,21 @@ app.detectFace = function(){
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
-			console.log(data);
-			// weatherApp.isThereWeather(data);
+			// console.log(data);
+			// console.log(data.face[0].attribute.smiling.value)
+			smileData = data.face[0].attribute.smiling.value;
+			// console.log(smileData);
+			app.detectSmile(smileData);
 		}
 	}); // end ajax
+}
+
+app.detectSmile = function(){
+	console.log(smileData)
+
+	if (smileData >= 30) {
+		console.log("you're happy!")
+	}
 }
 
 // DOCUMENT READY
