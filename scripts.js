@@ -79,8 +79,21 @@ api.request('detection/detect', {
 
 }); // end api.request
 
+app.detectFace = function(){
+	$.ajax({
+		url : 'https://apius.faceplusplus.com/v2/detection/detect?url=http://www.ianmcilwain.com/wp-content/themes/theme-hackeryou/images/headshot.jpg&api_secret=CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw&api_key=b76b9735bd2795ac44068c6b4d01d96e&attribute=glass,pose,gender,age,race,smiling',
+		type : "GET",
+		dataType : 'json',
+		success : function(data) {
+			console.log(data);
+			// weatherApp.isThereWeather(data);
+		}
+	}); // end ajax
+}
+
 // DOCUMENT READY
 $(function() {
 	// app.init();
   app.getVideo();
+  app.detectFace();
 })
