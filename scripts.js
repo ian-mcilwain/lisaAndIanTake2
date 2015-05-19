@@ -1,19 +1,12 @@
 // define namespace
 app = {};
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 app.locals = {
 	token : '204078c03d235e0',
 	imgurImg : '',
 }
 
 //make the canvas and the 2d context
-=======
-=======
->>>>>>> Stashed changes
-//mke the canvas and the 2d context
->>>>>>> Stashed changes
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
@@ -68,7 +61,6 @@ app.takePhoto = function() {
 
 }
 
-<<<<<<< Updated upstream
 app.upload = function(img) {
 	var $img = $(img);
 	localStorage.doUpload = true;
@@ -101,7 +93,6 @@ app.upload = function(img) {
 	});
 }
 
-<<<<<<< Updated upstream
 app.init = function(link){
 	var imageUrl = link;
 	// gets the image url on submit.  later on we will just use this to grab our imgur urls.
@@ -133,9 +124,7 @@ app.deletePic = function(info) {
 };
 
 // app.url = app.server + 'detection/detect' + app.secret;
-=======
-=======
->>>>>>> Stashed changes
+
 app.init = function(){
   $('.imgUrl').on('submit',function(e){
     e.preventDefault();
@@ -152,10 +141,6 @@ app.init = function(){
     console.log(detectImageUrl);
   });
 }  //init ends here
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 
 app.detectFace = function(){
 	$.ajax({
