@@ -2,6 +2,7 @@
 app = {};
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 app.locals = {
 	token : '204078c03d235e0',
 	imgurImg : '',
@@ -9,6 +10,8 @@ app.locals = {
 
 //make the canvas and the 2d context
 =======
+=======
+>>>>>>> Stashed changes
 //mke the canvas and the 2d context
 >>>>>>> Stashed changes
 var canvas = document.getElementById('canvas');
@@ -65,6 +68,7 @@ app.takePhoto = function() {
 
 }
 
+<<<<<<< Updated upstream
 app.upload = function(img) {
 	var $img = $(img);
 	localStorage.doUpload = true;
@@ -130,6 +134,8 @@ app.deletePic = function(info) {
 
 // app.url = app.server + 'detection/detect' + app.secret;
 =======
+=======
+>>>>>>> Stashed changes
 app.init = function(){
   $('.imgUrl').on('submit',function(e){
     e.preventDefault();
@@ -146,6 +152,9 @@ app.init = function(){
     console.log(detectImageUrl);
   });
 }  //init ends here
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 app.detectFace = function(){
