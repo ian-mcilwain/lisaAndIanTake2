@@ -62,7 +62,7 @@ app.takePhoto = function() {
 }
 
 app.upload = function(img) {
-	var $img = $('img');
+	var $img = $(img);
 	localStorage.doUpload = true;
 	localStorage.imageBase64 = $img.attr('src').replace(/.*,/, '');
 	var uploadImg = localStorage.imageBase64;
@@ -148,8 +148,6 @@ app.detectSmile = function(){
 		console.log("you're happy!")
 	}
 }
-
-
 
 // DOCUMENT READY
 $(function() {
