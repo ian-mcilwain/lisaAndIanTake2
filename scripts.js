@@ -94,8 +94,6 @@ app.upload = function(img) {
 }
 
 app.init = function(link){
-$('.imgUrl').on('submit',function(e){
-	e.preventDefault();
 	var imageUrl = link;
 	// gets the image url on submit.  later on we will just use this to grab our imgur urls.
 	var server = 'http://api.us.faceplusplus.com/v2/detection/detect';
@@ -107,7 +105,6 @@ $('.imgUrl').on('submit',function(e){
 	//concatinates on to our endpoints
 	app.detectFace(detectImageUrl);
 	console.log(detectImageUrl);
-});
 }  //init ends here
 
 
@@ -121,7 +118,7 @@ app.deletePic = function(info) {
 		  Accept: 'application/json'
 		},
 		success: function(rez) {
-			console.log(rez);
+			// console.log(rez);
 		}
 	});
 };
@@ -162,7 +159,7 @@ $(function() {
 		// console.log('snaaaaap')
 		app.takePhoto();
 		// app.upload();
-	// app.init();
+	app.init();
 	})
 
 })
