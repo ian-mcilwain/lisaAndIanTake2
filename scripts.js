@@ -219,7 +219,4 @@ $(function() {
       e.preventDefault();
       $(app.video).toggleClass('flipped');
     });
-
-  
->>>>>>> Stashed changes
-})
+}) // end docready
