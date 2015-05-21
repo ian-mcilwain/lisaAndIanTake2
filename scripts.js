@@ -53,10 +53,8 @@ app.takePhoto = function() {
        // 1. create an image 2. set the source the be the data 3. append to an element
   var img = $('<img>').attr('src',data);
   var link = $("<a>").attr("href",data);
-  // console.log(img);
   img.appendTo(link);
   link.appendTo('.strip');
-  console.log(img);
   app.upload(img);
 
 }
@@ -66,9 +64,6 @@ app.upload = function(img) {
 	localStorage.doUpload = true;
 	localStorage.imageBase64 = $img.attr('src').replace(/.*,/, '');
 	var uploadImg = localStorage.imageBase64;
-	// console.log(uploadImg);
-
-	// console.log(localStorage.imageBase64);
 	$.ajax({
 	  url: 'https://api.imgur.com/3/image',
 	  method: 'POST',
@@ -85,28 +80,10 @@ app.upload = function(img) {
 	    var id = result.data.id;
 	    var link = 'http://i.imgur.com/' + id + '.png';
 	    app.locals.imgurImg = result.data.id;
-	    // picApp.getEmotions(link);
-	    console.log(app.deleteLink);
-	    console.log(link);
 	    app.init(link);
 	  }
 	});
 }
-
-app.init = function(link){
-	var imageUrl = link;
-	// gets the image url on submit.  later on we will just use this to grab our imgur urls.
-	var server = 'http://api.us.faceplusplus.com/v2/detection/detect';
-	var key = 'b76b9735bd2795ac44068c6b4d01d96e';
-	var secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
-	var attribute = 'smiling';
-
-	detectImageUrl = server + '?url=' + imageUrl + '&api_secret=' + secret + '&api_key=' + key + '&attribute=' + attribute;
-	//concatinates on to our endpoints
-	app.detectFace(detectImageUrl);
-	console.log(detectImageUrl);
-}  //init ends here
-
 
 app.deletePic = function(info) {
 	$.ajax({
@@ -123,7 +100,17 @@ app.deletePic = function(info) {
 	});
 };
 
-// app.url = app.server + 'detection/detect' + app.secret;
+app.init = function(link){
+	var imageUrl = link;
+	var server = 'http://api.us.faceplusplus.com/v2/detection/detect';
+	var key = 'b76b9735bd2795ac44068c6b4d01d96e';
+	var secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
+	var attribute = 'smiling,glass';
+
+	detectImageUrl = server + '?url=' + imageUrl + '&api_secret=' + secret + '&api_key=' + key + '&attribute=' + attribute;
+	//concatinates on to our endpoints
+	app.detectFace(detectImageUrl);
+}  //init ends here
 
 app.detectFace = function(){
 	$.ajax({
@@ -131,10 +118,9 @@ app.detectFace = function(){
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
-			console.log(data);
-			// console.log(data.face[0].attribute.smiling.value)
 			smileData = data.face[0].attribute.smiling.value;
-			// console.log(smileData);
+			glassData = data.face[0].attribute.glass.value;
+			console.log(glassData);
 			app.detectSmile(smileData);
 			app.deletePic(app.deleteLink);
 		}
@@ -144,8 +130,36 @@ app.detectFace = function(){
 app.detectSmile = function(){
 	console.log(smileData)
 
-	if (smileData >= 30) {
-		console.log("you're happy!")
+	if (smileData <= 10) {
+		console.log("Why so sad?")
+		$('.moodRing').css("fill", "#000000")
+	} else if (smileData <= 20){
+		console.log("You're looking gloomy")
+		$('.moodRing').css("fill", "#6B0024")
+	} else if (smileData <= 30){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#FF7519")
+	} else if (smileData <= 40){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#29A329")
+	} else if (smileData <= 50){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#75A3FF")
+	} else if (smileData <= 60){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#000080")
+	} else if (smileData <= 70){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#DCC0F4")
+	} else if (smileData <= 80){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#DB1C4C")
+	} else if (smileData <= 90){
+		console.log("Meh")
+		$('.moodRing').css("fill", "#DF2683")
+	} else if (smileData <= 100){
+		console.log("someone's smiling!")
+		$('.moodRing').css("fill", "#CCFF00")
 	}
 }
 
@@ -154,10 +168,7 @@ $(function() {
  	app.getVideo();
 	$('a.snap').on('click',function(e){
 		e.preventDefault();
-		// console.log('snaaaaap')
 		app.takePhoto();
-		// app.upload();
-	app.init();
 	})
 
 })
