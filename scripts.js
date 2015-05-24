@@ -120,7 +120,7 @@ app.detectFace = function(){
 		success : function(data) {
 			smileData = data.face[0].attribute.smiling.value;
 			glassData = data.face[0].attribute.glass.value;
-			console.log(glassData);
+			// console.log(glassData);
 			app.detectSmile(smileData);
 			app.deletePic(app.deleteLink);
 		}
@@ -182,4 +182,4 @@ $(function() {
 // c. pos ab the ring in the center?
 // d. add to dom an animation of the words ian is currently console logging
 // e. style site
-// f. make responsive 
+// f. make responsive  
