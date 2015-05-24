@@ -132,7 +132,8 @@ app.detectSmile = function(){
 
 	if (smileData <= 10) {
 		console.log("Why so sad?")
-		$('.moodRing').css("fill", "#000000")
+		$('.moodRing').css("fill", "#000000");
+    // $('.strip').text("Why so sad?");
 	} else if (smileData <= 20){
 		console.log("You're looking gloomy")
 		$('.moodRing').css("fill", "#6B0024")

@@ -212,6 +212,17 @@ a {
 canvas {
   display: none; }
 
+.strip {
+  position: relative; }
+
 .strip img {
-  width: 16.666666667%;
-  float: left; }
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  z-index: 1; }
+
+svg {
+  z-index: 10;
+  position: relative; }
