@@ -41,6 +41,8 @@ h1 {
 }
 
 video {
+  max-width: 100%;
+  margin: 10px;
   transition:all 0.5s;
 	
 	.flipped {
@@ -71,7 +73,6 @@ a {
 .photoBooth {
   border-radius: 10px;
   border-radius: 5px;
-  max-width:640px;
   margin: 0 auto;
   position: relative;
   perspective:500px;
@@ -87,12 +88,12 @@ canvas {
   float:left;
 }
 
-.countdown {
-  position: absolute;
-  width: 100%;
-  font-size: 200px;
-  text-shadow:5px 5px 0 rgba(0,0,0,0.4);
-  top: 0;
-  padding-top: 190px;
-  display: none;
-}
+// .countdown {
+//   position: absolute;
+//   width: 100%;
+//   font-size: 200px;
+//   text-shadow:5px 5px 0 rgba(0,0,0,0.4);
+//   top: 0;
+//   padding-top: 190px;
+//   display: none;
+// }

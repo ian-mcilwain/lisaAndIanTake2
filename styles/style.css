@@ -157,6 +157,8 @@ h1 {
   width: 50%; }
 
 video {
+  max-width: 100%;
+  margin: 10px;
   transition: all 0.5s; }
   video .flipped {
     -webkit-transform: rotateY(180deg);
@@ -179,7 +181,6 @@ a {
 .photoBooth {
   border-radius: 10px;
   border-radius: 5px;
-  max-width: 640px;
   margin: 0 auto;
   position: relative;
   perspective: 500px;
@@ -191,12 +192,3 @@ canvas {
 .strip img {
   width: 16.666666667%;
   float: left; }
-
-.countdown {
-  position: absolute;
-  width: 100%;
-  font-size: 200px;
-  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.4);
-  top: 0;
-  padding-top: 190px;
-  display: none; }
