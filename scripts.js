@@ -172,3 +172,14 @@ $(function() {
 	})
 
 })
+
+
+
+
+// TO DO (LISA)
+// a. make one image at a time appear on right same size as canvas
+// b. change color of accent and main along with ring changing
+// c. pos ab the ring in the center?
+// d. add to dom an animation of the words ian is currently console logging
+// e. style site
+// f. make responsive 

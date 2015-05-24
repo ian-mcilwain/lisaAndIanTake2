@@ -18,16 +18,45 @@ body {
 
 .wrapper {
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 10px 60px;
 	text-align: center;
-	border: 1px solid $accent;
+	border: 3px solid $accent;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 60px;
+}
+
+.headItem {
+	flex: 1 auto;
 }
 
 h1 {
 	font-family: 'Quicksand', sans-serif;
 	color: $accent;
 	text-transform: uppercase;
+	font-size: 2.5rem;
+	transform: rotate(-12deg);
+}
 
+h2 {
+	font-family: 'Quicksand', sans-serif;
+	color: $accent;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+
+	a {
+		color: $accent;
+		text-decoration: underline;
+		-webkit-text-decoration: underline;
+	}
+
+	a:hover, a:focus {
+		transform: rotate(-12deg);
+	}
 }
 
 .left {

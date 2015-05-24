@@ -10,15 +10,24 @@
 <body>
 	<div class="wrapper clearfix">
 		<div class="content clearfix">
-			<h1>Mood Ring</h1>
+			<header>
+				<div class="headItem">
+					<h2>How are you today?</h2>
+				</div>
+				<div class="headItem">
+					<h1>Mood Ring</h1>
+				</div>
+				<div class="headItem">
+					<h2>Built by <a href="http://ianmcilwain.com" target="_blank">Ian</a> & <a href="http://lisafolkerson.com" target="_blank">Lisa</a></h2>
+				</div>	
+			</header><!--end .header-->
 			<div class="left">
 				<div class="photoBooth">
 				  <video class="webcam"></video>
 				  <canvas id="canvas" class="photo"></canvas>
-			   	 	<!-- <div class="countdown"></div> -->
-			   	 	<div class="tools">
+			   	  <div class="tools">
 			      		<a href="#" class="snap" data-wait="0"><i class="fa fa-camera"></i></a>
-					</div><!--end .tools-->
+				  </div><!--end .tools-->
 			    </div>
 			</div><!--end .left-->
 			
@@ -34,8 +43,6 @@
 				</g>
 				</svg>
 			</div><!--end .right-->
-
-			</div><!--end .photoBooth-->  
 		</div><!--end. content-->
 	</div><!--end .wrapper-->
 
