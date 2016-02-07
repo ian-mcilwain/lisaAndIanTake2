@@ -60,14 +60,10 @@ h2 {
 	}
 }
 
-.left {
+.left, .right {
 	float: left;
 	width: 50%;
-}
-
-.right {
-	float: left;
-	width: 50%;
+	padding: 20px;
 }
 
 video {
