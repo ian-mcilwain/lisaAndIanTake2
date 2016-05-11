@@ -160,35 +160,45 @@ app.detectSmile = function(){
 
 	if (smileData <= 10) {
 		console.log("Wow super bummed")
+		$(".messageBox").html("<p>Wow super bummed</p>");
 		changeColor(one);
     // $('body').css('background', 'grey');
 	} else if (smileData <= 20){
 		console.log("Feeling pretty gloomy");
+		$(".messageBox").html("<p>Feeling pretty gloomy</p>");
 		changeColor(two);
     // $('body').css('background', '#330000');
 	} else if (smileData <= 30){
 		console.log("you grumpy blech")
+		$(".messageBox").html("<p>you grumpy blech</p>");
 		changeColor(three);
 	} else if (smileData <= 40){
-		console.log("Are you annoyed or?")
+		console.log("Are you annoyed or?");
+		$(".messageBox").html("<p>Are you annoyed or?</p>");
 		changeColor(four);
 	} else if (smileData <= 50){
 		console.log("Consumed by nostalgia, perhaps")
+		$(".messageBox").html("<p>Consumed by nostalgia, perhaps</p>");
 		changeColor(five);
 	} else if (smileData <= 60){
-		console.log("it's an ok day")
+		console.log("it's an ok day");
+		$(".messageBox").html("<p>it's an ok day</p>");
 		changeColor(six);
 	} else if (smileData <= 70){
-		console.log("Mystical whimsical babely")
+		console.log("Mystical whimsical babely");
+		$(".messageBox").html("<p>Mystical whimsical babely</p>");
 		changeColor(seven);
 	} else if (smileData <= 80){
-		console.log("It's a lucky day")
+		console.log("It's a lucky day");
+		$(".messageBox").html("<p>It's a lucky day</p>");
 		changeColor(eight);
 	} else if (smileData <= 90){
-		console.log("Feeling somewhat loving")
+		console.log("Feeling somewhat loving");
+		$(".messageBox").html("<p>Feeling somewhat loving</p>");
 		changeColor(nine);
 	} else if (smileData <= 100){
-		console.log("HAPPY AS HECK!")
+		console.log("HAPPY AS HECK!");
+		$(".messageBox").html("<p>HAPPY AS HECK!</p>");
 		changeColor(ten);
 
 	} else if (smileData == undefined ) {
@@ -201,9 +211,22 @@ app.detectSmile = function(){
 $(function() {
  	app.getVideo();
 	$('a.snap').on('click',function(e){
-		$(".workingBox").addClass('working'); //this cues the beginning of a progress effect 
+		$(".messageBox").html("<p>Let Me See how You're feeling...</p>");
+		$(".workingBox").addClass('working');
+		 //this cues the beginning of a progress effect 
+
+		$("#countdownNum").html("3");
 		e.preventDefault();
+		setTimeout(function(){
 		app.takePhoto();
+		$("#countdownNum").html("")
+		}, 3000);
+		setTimeout(function(){
+			$("#countdownNum").html("1")
+		}, 2000);
+		setTimeout(function(){
+			$("#countdownNum").html("2")
+		}, 1000);
 	})
 
 })
