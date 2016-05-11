@@ -76,6 +76,7 @@ app.upload = function(img) {
 	    type: 'base64'
 	  },
 	  success: function(result) {
+	  	console.log("uploaded!")
 	  	app.deleteLink = result.data.deletehash;
 	    var id = result.data.id;
 	    var link = 'http://i.imgur.com/' + id + '.png';
