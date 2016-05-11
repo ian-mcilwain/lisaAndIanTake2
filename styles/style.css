@@ -236,3 +236,8 @@ canvas {
   width: 200px;
   height: 200px;
   background-color: yellow; }
+  .workingBox p {
+    visibility: hidden; }
+
+.working p {
+  visibility: visible; }
