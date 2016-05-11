@@ -168,14 +168,16 @@ h2 {
   h2 a {
     color: red;
     text-decoration: underline;
-    -webkit-text-decoration: underline; }
+    -webkit-text-decoration: underline;
+    display: inline-block; }
   h2 a:hover, h2 a:focus {
     transform: rotate(-12deg); }
 
 .left, .right {
   float: left;
   width: 50%;
-  padding: 20px; }
+  padding: 20px;
+  position: relative; }
 
 video {
   max-width: 100%;
@@ -184,6 +186,9 @@ video {
   video .flipped {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg); }
+
+.placeholder {
+  width: 100%; }
 
 a {
   text-decoration: none; }
@@ -210,8 +215,8 @@ a {
   border-radius: 5px;
   margin: 0 auto;
   position: relative;
-  perspective: 500px;
-  -webkit-perspective: 500px; }
+  -webkit-perspective: 500px;
+  perspective: 500px; }
 
 canvas {
   display: none; }

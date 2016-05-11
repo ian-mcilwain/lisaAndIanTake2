@@ -53,6 +53,7 @@ h2 {
 		color: $accent;
 		text-decoration: underline;
 		-webkit-text-decoration: underline;
+		display: inline-block;
 	}
 
 	a:hover, a:focus {
@@ -64,6 +65,7 @@ h2 {
 	float: left;
 	width: 50%;
 	padding: 20px;
+	position: relative;
 }
 
 video {
@@ -77,6 +79,9 @@ video {
 	}
 }
 
+.placeholder {
+	width: 100%;
+}
 
 a {
   text-decoration: none;
@@ -114,8 +119,8 @@ a {
   border-radius: 5px;
   margin: 0 auto;
   position: relative;
-  perspective:500px;
   -webkit-perspective:500px;
+  perspective:500px;
 }
 
 canvas {
