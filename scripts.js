@@ -14,6 +14,8 @@ var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+
+
 // grab the video element with jQuery
 app.video = $('video.webcam')[0];
 // grab the canvas with jquery
@@ -122,7 +124,6 @@ app.detectFace = function(){
 			if (data.face[0] !== null) {
 			smileData = data.face[0].attribute.smiling.value;
 			glassData = data.face[0].attribute.glass.value;
-				// console.log(glassData);
 				app.detectSmile(smileData);
 				app.deletePic(app.deleteLink);
 				
@@ -137,6 +138,7 @@ function changeColor(color){
   $('.moodRing').css("fill", color);
   $('.wrapper').css('border', '3px solid ' + color);
   $('h1, h2, a:not(.snap)').css('color', color);
+  $('.tools a').css('background', color)
   // $('body').css('background', color);
 };
 
