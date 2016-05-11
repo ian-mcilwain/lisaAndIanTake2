@@ -118,50 +118,79 @@ app.detectFace = function(){
 		type : "GET",
 		dataType : 'json',
 		success : function(data) {
+			if (data.face[0] !== null) {
 			smileData = data.face[0].attribute.smiling.value;
 			glassData = data.face[0].attribute.glass.value;
-			// console.log(glassData);
-			app.detectSmile(smileData);
-			app.deletePic(app.deleteLink);
+				// console.log(glassData);
+				app.detectSmile(smileData);
+				app.deletePic(app.deleteLink);
+				
+			} else {
+				console.log('there is no face here');
+			}
 		}
 	}); // end ajax
 }
 
+function changeColor(color){
+  $('.moodRing').css("fill", color);
+  $('.wrapper').css('border', '3px solid ' + color);
+  $('h1, h2, a:not(.snap)').css('color', color);
+  // $('body').css('background', color);
+};
+
 app.detectSmile = function(){
 	console.log(smileData)
 
+	var one = "black",
+		two = "#6B0024",
+    three = "#DCC0F4",
+    four = "#29A329",
+    five = "#75A3FF",
+    six = "#000080",
+		seven = "#FF7519",
+		eight = "#DB1C4C",
+		nine = "#DF2683",
+		ten = "rgba(204, 255, 0, 1)";
+
+
 	if (smileData <= 10) {
-		console.log("Why so sad?")
-		$('.moodRing').css("fill", "#000000");
-    // $('.strip').text("Why so sad?");
+		console.log("Wow super bummed")
+		changeColor(one);
+    // $('body').css('background', 'grey');
 	} else if (smileData <= 20){
-		console.log("You're looking gloomy")
-		$('.moodRing').css("fill", "#6B0024")
+		console.log("Feeling pretty gloomy");
+		changeColor(two);
+    // $('body').css('background', '#330000');
 	} else if (smileData <= 30){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#FF7519")
+		console.log("you grumpy blech")
+		changeColor(three);
 	} else if (smileData <= 40){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#29A329")
+		console.log("Are you annoyed or?")
+		changeColor(four);
 	} else if (smileData <= 50){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#75A3FF")
+		console.log("Consumed by nostalgia, perhaps")
+		changeColor(five);
 	} else if (smileData <= 60){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#000080")
+		console.log("it's an ok day")
+		changeColor(six);
 	} else if (smileData <= 70){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#DCC0F4")
+		console.log("Mystical whimsical babely")
+		changeColor(seven);
 	} else if (smileData <= 80){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#DB1C4C")
+		console.log("It's a lucky day")
+		changeColor(eight);
 	} else if (smileData <= 90){
-		console.log("Meh")
-		$('.moodRing').css("fill", "#DF2683")
+		console.log("Feeling somewhat loving")
+		changeColor(nine);
 	} else if (smileData <= 100){
-		console.log("someone's smiling!")
-		$('.moodRing').css("fill", "#CCFF00")
+		console.log("HAPPY AS HECK!")
+		changeColor(ten);
+
+	} else if (smileData == undefined ) {
+		console.log('can\'t see what your face!');
 	}
+
 }
 
 // DOCUMENT READY
@@ -184,3 +213,5 @@ $(function() {
 // d. add to dom an animation of the words ian is currently console logging
 // e. style site
 // f. make responsive  
+
+//g. progress graphic while its thinking

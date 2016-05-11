@@ -1,7 +1,7 @@
 @import "normalize";
 
 
-//////////////////MIXINS
+//////////////////Variables
 
 $main-color: rgba(255, 255, 251, 1);
 $accent: red;
@@ -13,7 +13,7 @@ img, canvas {
 }
 
 
-body {
+body {	
 	background: $main-color;
 }
 
@@ -26,13 +26,13 @@ body {
 
 header {
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	padding: 20px 60px;
 }
 
 .headItem {
-	flex: 1 auto;
+	flex: 2 auto;
 }
 
 h1 {
@@ -68,7 +68,7 @@ h2 {
 
 video {
   max-width: 100%;
-  margin: 10px;
+  margin: 0 auto;
   transition:all 0.5s;
 	
 	.flipped {
@@ -115,24 +115,16 @@ canvas {
 
 .strip img {
   max-width:100%;
-  position: absolute;
+  position: absolute; 
   top: 0;
   left: 0;
-  margin: 10px;
+  margin: 0 auto;
   z-index: 1;
 }
 
 svg {
 	z-index: 10;
 	position: relative;
+	height: 130px;
+	top: -10px;
 }
-
-// .countdown {
-//   position: absolute;
-//   width: 100%;
-//   font-size: 200px;
-//   text-shadow:5px 5px 0 rgba(0,0,0,0.4);
-//   top: 0;
-//   padding-top: 190px;
-//   display: none;
-// }

@@ -73,7 +73,7 @@ svg:not(:root) {
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+  padding: .35em .625em .75em; }
 
 button, input, select, textarea {
   font-family: inherit;
@@ -83,7 +83,8 @@ button, input, select, textarea {
 button, input {
   line-height: normal; }
 
-button, html input[type=button], input[type=reset], input[type=submit] {
+button, html input[type=button],
+input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer; }
 
@@ -145,12 +146,12 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 20px 60px; }
 
 .headItem {
-  flex: 1 auto; }
+  flex: 2 auto; }
 
 h1 {
   font-family: 'Quicksand', sans-serif;
@@ -171,17 +172,14 @@ h2 {
   h2 a:hover, h2 a:focus {
     transform: rotate(-12deg); }
 
-.left {
+.left, .right {
   float: left;
-  width: 50%; }
-
-.right {
-  float: left;
-  width: 50%; }
+  width: 50%;
+  padding: 20px; }
 
 video {
   max-width: 100%;
-  margin: 10px;
+  margin: 0 auto;
   transition: all 0.5s; }
   video .flipped {
     -webkit-transform: rotateY(180deg);
@@ -220,9 +218,11 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  margin: 10px;
+  margin: 0 auto;
   z-index: 1; }
 
 svg {
   z-index: 10;
-  position: relative; }
+  position: relative;
+  height: 130px;
+  top: -10px; }
