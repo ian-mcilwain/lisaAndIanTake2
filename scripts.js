@@ -142,6 +142,7 @@ function changeColor(color){
 
 app.detectSmile = function(){
 	console.log(smileData)
+	$(".workingBox").removeClass('working'); //This ends the progress effect
 
 	var one = "black",
 		two = "#6B0024",
@@ -198,11 +199,14 @@ app.detectSmile = function(){
 $(function() {
  	app.getVideo();
 	$('a.snap').on('click',function(e){
+		$(".workingBox").addClass('working'); //this cues the beginning of a progress effect 
 		e.preventDefault();
 		app.takePhoto();
 	})
 
 })
+
+
 
 
 

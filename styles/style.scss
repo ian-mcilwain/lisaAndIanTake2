@@ -83,16 +83,29 @@ a {
 }
 
 .tools {
+	width: 160%;
+	margin-left: 20%;
   padding:10px;
+  display: flex;
+  justify-content: space-between;
+	.shutter {
 
-  a {
-  	color:$main-color;
-  	background:$accent;
-  	display: inline-block;
-  	width:70px;
-  	line-height:70px;
-  	font-size: 20px;
-  	border-radius: 50%;
+	  a {
+	  	color:$main-color;
+	  	background:$accent;
+	  	display: inline-block;
+	  	width:70px;
+	  	line-height:70px;
+	  	font-size: 20px;
+	  	border-radius: 50%;
+	  }
+	} // shutter ends here
+
+  svg {
+  	// z-index: 10;
+  	// position: relative;
+  	height: 130px;
+  	// top: -10px;
   }
 }
 
@@ -122,9 +135,10 @@ canvas {
   z-index: 1;
 }
 
-svg {
-	z-index: 10;
-	position: relative;
-	height: 130px;
-	top: -10px;
+
+
+.workingBox {
+	width: 200px;
+	height: 200px;
+	background-color: yellow;
 }

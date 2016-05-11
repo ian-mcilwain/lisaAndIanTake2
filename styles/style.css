@@ -189,8 +189,12 @@ a {
   text-decoration: none; }
 
 .tools {
-  padding: 10px; }
-  .tools a {
+  width: 160%;
+  margin-left: 20%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; }
+  .tools .shutter a {
     color: #fffffb;
     background: red;
     display: inline-block;
@@ -198,6 +202,8 @@ a {
     line-height: 70px;
     font-size: 20px;
     border-radius: 50%; }
+  .tools svg {
+    height: 130px; }
 
 .photoBooth {
   border-radius: 10px;
@@ -221,8 +227,7 @@ canvas {
   margin: 0 auto;
   z-index: 1; }
 
-svg {
-  z-index: 10;
-  position: relative;
-  height: 130px;
-  top: -10px; }
+.workingBox {
+  width: 200px;
+  height: 200px;
+  background-color: yellow; }
