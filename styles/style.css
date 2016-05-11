@@ -217,6 +217,15 @@ a {
   position: relative;
   -webkit-perspective: 500px;
   perspective: 500px; }
+  .photoBooth .countdown {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .photoBooth .countdown #countdownNum {
+      font-size: 72px; }
 
 canvas {
   display: none; }
