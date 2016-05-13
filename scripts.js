@@ -1,16 +1,11 @@
 // define namespace
 app = {};
 
-<<<<<<< Updated upstream
 app.locals = {
 	token : '204078c03d235e0',
 	imgurImg : '',
 }
 
-//make the canvas and the 2d context
-=======
-//mke the canvas and the 2d context
->>>>>>> Stashed changes
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
@@ -28,7 +23,7 @@ app.canvas = $('canvas.photo')[0];
 app.getVideo = function() {
 
   // normalize so it works on all browsers in the future all browsers will get navigator.getUserMedia()
-  navigator.getUserKBMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+  navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
   navigator.getUserMedia ({ video: true,  audio: false }, function(localMediaStream) {
     // set the video source
@@ -65,7 +60,7 @@ app.takePhoto = function() {
 
 }
 
-<<<<<<< Updated upstream
+// <<<<<<< Updated upstream
 app.upload = function(img) {
 	var $img = $(img);
 	localStorage.doUpload = true;
@@ -231,7 +226,7 @@ app.detectSmile = function(){
 
 // DOCUMENT READY
 $(function() {
-<<<<<<< Updated upstream
+// <<<<<<< Updated upstream
  	app.getVideo();
 	$('a.snap').on('click',function(e){
 		$(".messageBox").html("<p>Let Me See how You're feeling...</p>");
@@ -252,7 +247,7 @@ $(function() {
 		}, 1000);
 	})
 
-=======
+// =======
  //  app.getVideo();
 	// app.init();
  //  app.detectSmile();
@@ -295,7 +290,7 @@ $(function() {
  //    });
 
   
->>>>>>> Stashed changes
+// >>>>>>> Stashed changes
 })
 
 
