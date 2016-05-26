@@ -123,6 +123,7 @@ app.detectFace = function(){
 		success : function(data) {
 			if (data.face[0] !== null) {
 			smileData = data.face[0].attribute.smiling.value;
+			smileData = Math.round(smileData);
 			glassData = data.face[0].attribute.glass.value;
 				app.detectSmile(smileData);
 				app.deletePic(app.deleteLink);
@@ -144,7 +145,7 @@ function changeColor(color){
 
 app.detectSmile = function(){
 	console.log(smileData)
-	$(".workingBox").removeClass('working'); //This ends the progress effect
+	// $(".workingBox").removeClass('working'); //This ends the progress effect
 
 	var one = "black",
 		two = "#6B0024",
@@ -159,50 +160,50 @@ app.detectSmile = function(){
 
 
 	if (smileData <= 10) {
-		console.log("Wow super bummed")
-		$(".messageBox").html("<p>Wow super bummed</p>");
+		console.log("Wow super bummed");
+		$(".messageBox").html(smileData + "/100   " + "<p>Wow super bummed</p>");
 		changeColor(one);
     // $('body').css('background', 'grey');
 	} else if (smileData <= 20){
 		console.log("Feeling pretty gloomy");
-		$(".messageBox").html("<p>Feeling pretty gloomy</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>Feeling pretty gloomy</p>");
 		changeColor(two);
     // $('body').css('background', '#330000');
 	} else if (smileData <= 30){
 		console.log("you grumpy blech")
-		$(".messageBox").html("<p>you grumpy blech</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>you grumpy blech</p>");
 		changeColor(three);
 	} else if (smileData <= 40){
 		console.log("Are you annoyed or?");
-		$(".messageBox").html("<p>Are you annoyed or?</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>Are you annoyed or?</p>");
 		changeColor(four);
 	} else if (smileData <= 50){
 		console.log("Consumed by nostalgia, perhaps")
-		$(".messageBox").html("<p>Consumed by nostalgia, perhaps</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>Consumed by nostalgia, perhaps</p>");
 		changeColor(five);
 	} else if (smileData <= 60){
 		console.log("it's an ok day");
-		$(".messageBox").html("<p>it's an ok day</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>it's an ok day</p>");
 		changeColor(six);
 	} else if (smileData <= 70){
 		console.log("Mystical whimsical babely");
-		$(".messageBox").html("<p>Mystical whimsical babely</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>Mystical whimsical babely</p>");
 		changeColor(seven);
 	} else if (smileData <= 80){
 		console.log("It's a lucky day");
-		$(".messageBox").html("<p>It's a lucky day</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>It's a lucky day</p>");
 		changeColor(eight);
 	} else if (smileData <= 90){
 		console.log("Feeling somewhat loving");
-		$(".messageBox").html("<p>Feeling somewhat loving</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>Feeling somewhat loving</p>");
 		changeColor(nine);
 	} else if (smileData <= 100){
 		console.log("HAPPY AS HECK!");
-		$(".messageBox").html("<p>HAPPY AS HECK!</p>");
+		$(".messageBox").html(smileData + "/100   " + "<p>HAPPY AS HECK!</p>");
 		changeColor(ten);
 
 	} else if (smileData == undefined ) {
-		console.log('can\'t see what your face!');
+		console.log('can\'t see your face!');
 	}
 
 }
