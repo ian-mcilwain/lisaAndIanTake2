@@ -113,23 +113,6 @@ app.init = function(link){
 	detectImageUrl = server + '?url=' + imageUrl + '&api_secret=' + secret + '&api_key=' + key + '&attribute=' + attribute;
 	//concatinates on to our endpoints
 	app.detectFace(detectImageUrl);
-// =======
-// app.init = function(){
-//   $('.imgUrl').on('submit',function(e){
-//     e.preventDefault();
-//     var imageUrl = $('.url').val();
-//     // gets the image url on submit.  later on we will just use this to grab urls.
-//     var server = 'http://api.us.faceplusplus.com/v2/detection/detect';
-//     var key = 'b76b9735bd2795ac44068c6b4d01d96e';
-//     var secret = 'CxYS3FuIjXau6bUckY-KKxaKNGTXOPGw';
-//     var attribute = 'smiling';
-
-//     detectImageUrl = server + '?url=' + imageUrl + '&api_secret=' + secret + '&api_key=' + key + '&attribute=' + attribute;
-//     //concatinates on to our endpoints
-//     app.detectFace(detectImageUrl);
-//     console.log(detectImageUrl);
-//   });
-// >>>>>>> Stashed changes
 }  //init ends here
 
 app.detectFace = function(){
@@ -227,7 +210,6 @@ app.detectSmile = function(){
 
 // DOCUMENT READY
 $(function() {
-// <<<<<<< Updated upstream
  	app.getVideo();
 	$('a.snap').on('click',function(e){
 		$(".messageBox").html("<p>Let Me See how You're feeling...</p>");
@@ -246,53 +228,8 @@ $(function() {
 		setTimeout(function(){
 			$("#countdownNum").html("2")
 		}, 1000);
-	})
-
-// =======
- //  app.getVideo();
-	// app.init();
- //  app.detectSmile();
-
- //  $('a.snap').on('click',function(e) {
- //      e.preventDefault();
- //      // find the wait time
- //      var waitTime = $(this).data('wait');
- //      var waitedTime = 0;
-
- //      // if there is no wait, then just take it
- //      if(!waitTime) {
- //        app.takePhoto();
- //        return; // stop the rest from running          
- //      }
-
- //      // set a timeout to take the photo after X seconds
- //      setTimeout(function(){
- //        app.takePhoto();
- //      },waitTime);
-
- //      $('.countdown').text(waitTime / 1000).show();
-
- //      var interval = setInterval(function(){
- //        waitedTime+= 1000;
- //        var timeLeft = (waitTime - waitedTime) / 1000;
- //        $('.countdown').text(timeLeft);
- //        if(waitedTime >= waitTime) {
- //          clearInterval(interval);
- //          $('.countdown').hide();
- //        }
- //      },1000);
-
-
- //    });
-
- //    $('a.flip').on('click',function(e) {
- //      e.preventDefault();
- //      $(app.video).toggleClass('flipped');
- //    });
-
-  
-// >>>>>>> Stashed changes
-})
+	});
+});
 
 
 
